@@ -266,6 +266,7 @@ export default function Fork({
   });
 
   const conversationId = _convoId ?? '';
+
   if (!forkingSupported || !conversationId || !messageId) {
     return null;
   }
