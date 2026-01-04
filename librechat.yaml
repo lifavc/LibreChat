@@ -111,11 +111,9 @@ endpoints:
       titleConvo: true
       titleModel: "alfred"
       modelDisplayLabel: "Alfred - Chief of Staff"
-      # TODO: Add icon when available
-      # iconURL: "https://lifa.vc/assets/alfred-icon.png"
-      
+      iconURL: "https://cdn.prod.website-files.com/670d763f1593e36762b44a69/695aae1c415f4a17af2eed5f_alfred-profile.jpeg"
       # n8n webhook compatibility
-      directEndpoint: false
+      directEndpoint: true
       forcePrompt: true
       streamRate: 0
       addParams:
@@ -137,8 +135,8 @@ endpoints:
       titleConvo: true
       titleModel: "alex"
       modelDisplayLabel: "Alex - Deal Analyst"
-      
-      directEndpoint: false
+      iconURL: "https://cdn.prod.website-files.com/670d763f1593e36762b44a69/695aae1f33dc0322198f3cdb_alex-profile.jpg"
+      directEndpoint: true
       forcePrompt: true
       streamRate: 0
       addParams:
@@ -160,8 +158,8 @@ endpoints:
       titleConvo: true
       titleModel: "sarah"
       modelDisplayLabel: "Sarah - External Relations"
-      
-      directEndpoint: false
+      iconURL: "https://cdn.prod.website-files.com/670d763f1593e36762b44a69/695aae301e39302170caeec9_sarah-profile.jpg"
+      directEndpoint: true
       forcePrompt: true
       streamRate: 0
       addParams:
@@ -184,7 +182,7 @@ endpoints:
       titleModel: "linda"
       modelDisplayLabel: "Linda - Legal"
       
-      directEndpoint: false
+      directEndpoint: true
       forcePrompt: true
       streamRate: 0
       addParams:
@@ -206,8 +204,8 @@ endpoints:
       titleConvo: true
       titleModel: "mia"
       modelDisplayLabel: "Mia - Personal Brand"
-      
-      directEndpoint: false
+      iconURL: "https://cdn.prod.website-files.com/670d763f1593e36762b44a69/695aae28bdfbd44b1c8020e9_mia-profile.png"
+      directEndpoint: true
       forcePrompt: true
       streamRate: 0
       addParams:
@@ -229,8 +227,8 @@ endpoints:
       titleConvo: true
       titleModel: "marcus"
       modelDisplayLabel: "Marcus - Market Intel"
-      
-      directEndpoint: false
+      iconURL: "https://cdn.prod.website-files.com/670d763f1593e36762b44a69/695aae5e117e0b0110cab67e_marcus-profile.png"
+      directEndpoint: true
       forcePrompt: true
       streamRate: 0
       addParams:
