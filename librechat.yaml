@@ -114,7 +114,7 @@ endpoints:
       iconURL: "https://cdn.prod.website-files.com/670d763f1593e36762b44a69/695aae1c415f4a17af2eed5f_alfred-profile.jpeg"
       # n8n webhook compatibility
       directEndpoint: true
-      forcePrompt: true
+      forcePrompt: false
       streamRate: 0
       addParams:
         stream: false
@@ -143,7 +143,7 @@ endpoints:
         stream: false
       headers:
         Content-Type: "application/json"
-      dropParams: ["stop", "frequency_penalty", "presence_penalty", "top_p"]
+      dropParams: ["stop", "frequency_penalty", "presence_penalty", "top_p", "stream"]
 
     # -----------------------------------------
     # n8n: Sarah (External Relations)
@@ -160,7 +160,7 @@ endpoints:
       modelDisplayLabel: "Sarah - External Relations"
       iconURL: "https://cdn.prod.website-files.com/670d763f1593e36762b44a69/695aae301e39302170caeec9_sarah-profile.jpg"
       directEndpoint: true
-      forcePrompt: true
+      forcePrompt: false
       streamRate: 0
       addParams:
         stream: false
@@ -183,7 +183,7 @@ endpoints:
       modelDisplayLabel: "Linda - Legal"
       
       directEndpoint: true
-      forcePrompt: true
+      forcePrompt: false
       streamRate: 0
       addParams:
         stream: false
@@ -206,7 +206,7 @@ endpoints:
       modelDisplayLabel: "Mia - Personal Brand"
       iconURL: "https://cdn.prod.website-files.com/670d763f1593e36762b44a69/695aae28bdfbd44b1c8020e9_mia-profile.png"
       directEndpoint: true
-      forcePrompt: true
+      forcePrompt: false
       streamRate: 0
       addParams:
         stream: false
@@ -229,7 +229,7 @@ endpoints:
       modelDisplayLabel: "Marcus - Market Intel"
       iconURL: "https://cdn.prod.website-files.com/670d763f1593e36762b44a69/695aae5e117e0b0110cab67e_marcus-profile.png"
       directEndpoint: true
-      forcePrompt: true
+      forcePrompt: false
       streamRate: 0
       addParams:
         stream: false
