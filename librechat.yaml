@@ -144,7 +144,7 @@ endpoints:
         Content-Type: "application/json"
         x-api-key: "${N8N_ALEX_KEY}"
         Authentication: "${N8N_ALEX_KEY}"
-        Authentication: "Bearer ${N8N_ALEX_KEY}"
+        #Authentication: "Bearer ${N8N_ALEX_KEY}"
         X-User-ID: "{{LIBRECHAT_USER_ID}}"
         X-User-Email: "{{LIBRECHAT_USER_EMAIL}}"
         X-Conversation-ID: "{{LIBRECHAT_BODY_CONVERSATIONID}}"
