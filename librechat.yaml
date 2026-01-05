@@ -106,14 +106,14 @@ endpoints:
         fetch: true  # Bridge supports /v1/models endpoint
       titleConvo: true
       titleModel: "alfred"
-      modelDisplayLabel: "LIFA"
+      modelDisplayLabel: "LIFA.VC"
       headers:
         X-Chat-Id: "{{LIBRECHAT_BODY_CONVERSATIONID}}"
         X-User-Id: "{{LIBRECHAT_USER_ID}}"
         X-User-Email: "{{LIBRECHAT_USER_EMAIL}}"
         X-User-Name: "{{LIBRECHAT_USER_NAME}}"
         X-User-Role: "{{LIBRECHAT_USER_ROLE}}"
-      summary: true
+    #  summary: true
     # -----------------------------------------
     # n8n: Alfred (Orchestrator / Chief of Staff)
     # Routes to specialist agents or handles operational tasks
