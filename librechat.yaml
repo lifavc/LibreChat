@@ -122,30 +122,27 @@ fileConfig:
   # Server-wide limits
   serverFileSizeLimit: 50    # 50 MB max per file
   avatarSizeLimit: 2         # 2 MB for avatars
-  
+  endpoints:
+    # Use your custom endpoint NAME as the key
+    "LIFA.VC Agents":
+      fileLimit: 5
+      fileSizeLimit: 20
+      totalSizeLimit: 50
+      supportedMimeTypes:
+        - "image/.*"                    # All images
+        - "application/pdf"             # PDFs
+        - "text/.*"                     # All text files
+        - "application/vnd\\.openxmlformats-officedocument\\..*"  # Office docs (docx, xlsx, pptx)
   # Default for all endpoints
   default:
     fileLimit: 10
     fileSizeLimit: 25
     totalSizeLimit: 100
     supportedMimeTypes:
-      # Documents
-      - "application/pdf"
-      - "application/msword"
-      - "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-      - "application/vnd.ms-excel"
-      - "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-      - "application/vnd.ms-powerpoint"
-      - "application/vnd.openxmlformats-officedocument.presentationml.presentation"
-      # Text
-      - "text/plain"
-      - "text/csv"
-      - "text/markdown"
-      # Images
-      - "image/jpeg"
-      - "image/png"
-      - "image/gif"
-      - "image/webp"
+      - "image/.*"                    # All images
+      - "application/pdf"             # PDFs
+      - "text/.*"                     # All text files
+      - "application/vnd\\.openxmlformats-officedocument\\..*" 
 
 # =============================================================================
 # RATE LIMITS (relaxed for internal team)
