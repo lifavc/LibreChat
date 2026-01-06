@@ -69,11 +69,17 @@ const DragDropModal = ({ onOptionSelect, setShowModal, files, isVisible }: DragD
     const isAzureWithResponsesApi =
       currentProvider === EModelEndpoint.azureOpenAI && useResponsesApi;
 
+    // Check if provider is in the configured documentSupportedProviders for agents
+    const configuredDocumentProviders = agentsConfig?.documentSupportedProviders ?? [];
+    const isConfiguredDocumentProvider =
+      currentProvider != null && configuredDocumentProviders.includes(currentProvider);
+
     // Check if provider supports document upload
     if (
       isDocumentSupportedProvider(endpointType) ||
       isDocumentSupportedProvider(currentProvider) ||
-      isAzureWithResponsesApi
+      isAzureWithResponsesApi ||
+      isConfiguredDocumentProvider
     ) {
       const supportsImageDocVideoAudio =
         currentProvider === EModelEndpoint.google || currentProvider === Providers.OPENROUTER;
@@ -137,6 +143,7 @@ const DragDropModal = ({ onOptionSelect, setShowModal, files, isVisible }: DragD
     endpoint,
     endpointType,
     capabilities,
+    agentsConfig,
     useResponsesApi,
     codeAllowedByAgent,
     fileSearchAllowedByAgent,

@@ -101,6 +101,11 @@ endpoints:
       - openAI
       - google
       - anthropic
+      - "LIFA.VC Agents"
+    # Additional providers/endpoints that support direct document uploads for agents.
+    # Use this to enable "Upload files to provider" for custom endpoints.
+    documentSupportedProviders:
+      - "LIFA.VC Agents"
     capabilities:
       - "context"
       - "ocr"       # Enhances with OCR

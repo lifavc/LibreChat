@@ -281,6 +281,12 @@ export const agentsEndpointSchema = baseEndpointSchema
       maxCitationsPerFile: z.number().min(1).max(10).optional().default(7),
       minRelevanceScore: z.number().min(0.0).max(1.0).optional().default(0.45),
       allowedProviders: z.array(z.union([z.string(), eModelEndpointSchema])).optional(),
+      /**
+       * Additional providers/endpoints that support direct document uploads for agents.
+       * These are added to the default list of document-supported providers.
+       * Use this to enable "Upload files to provider" for custom endpoints.
+       */
+      documentSupportedProviders: z.array(z.string()).optional(),
       capabilities: z
         .array(z.nativeEnum(AgentCapabilities))
         .optional()

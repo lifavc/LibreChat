@@ -122,10 +122,16 @@ const AttachFileMenu = ({
       const isAzureWithResponsesApi =
         currentProvider === EModelEndpoint.azureOpenAI && useResponsesApi;
 
+      // Check if provider is in the configured documentSupportedProviders for agents
+      const configuredDocumentProviders = agentsConfig?.documentSupportedProviders ?? [];
+      const isConfiguredDocumentProvider =
+        currentProvider != null && configuredDocumentProviders.includes(currentProvider);
+
       if (
         isDocumentSupportedProvider(endpointType) ||
         isDocumentSupportedProvider(currentProvider) ||
-        isAzureWithResponsesApi
+        isAzureWithResponsesApi ||
+        isConfiguredDocumentProvider
       ) {
         items.push({
           label: localize('com_ui_upload_provider'),
@@ -217,6 +223,7 @@ const AttachFileMenu = ({
     provider,
     endpointType,
     capabilities,
+    agentsConfig,
     useResponsesApi,
     setToolResource,
     setEphemeralAgent,
