@@ -35,7 +35,7 @@ interface:
   bookmarks: true           # Bookmark conversations
 
   # === AGENTS (enabled - core feature for your setup) ===
-  agents: false              # Create and use LibreChat agents
+  agents: true              # Create and use LibreChat agents
   
   # === MULTI-CONVERSATION (enabled - mix agents in same chat) ===
   multiConvo: false          # Use multiple agents in one conversation
