@@ -97,13 +97,12 @@ registration:
 
 endpoints:
   agents:
+    allowedProviders:
+      - openAI
+      - google
+      - anthropic
     capabilities:
-      - "execute_code"
-      - "file_search"
-      - "actions"
-      - "tools"
-      - "artifacts"
-      - "context"   # Enables "Upload as Text"
+      - "context"
       - "ocr"       # Enhances with OCR
   custom:
     - name: "LIFA.VC Agents"
