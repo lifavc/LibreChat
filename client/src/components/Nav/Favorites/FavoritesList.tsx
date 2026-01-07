@@ -187,6 +187,10 @@ export default function FavoritesList({
       queryFn: () => dataService.getAgentById({ agent_id: agentId }),
       staleTime: 1000 * 60 * 5,
       enabled: missingAgentIds.length > 0,
+      retry: false, // Don't retry on 404 - agent may be deleted
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+      refetchOnMount: false,
     })),
   });
 
