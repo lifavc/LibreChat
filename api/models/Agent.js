@@ -690,6 +690,7 @@ const getListAgentsByAccess = async ({
     name: 1,
     avatar: 1,
     author: 1,
+    provider: 1,
     projectIds: 1,
     description: 1,
     updatedAt: 1,
@@ -760,6 +761,7 @@ const getListAgents = async (searchParameter) => {
       name: 1,
       avatar: 1,
       author: 1,
+      provider: 1,
       projectIds: 1,
       description: 1,
       // @deprecated - isCollaborative replaced by ACL permissions

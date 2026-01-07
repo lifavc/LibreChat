@@ -26,6 +26,7 @@ export const useGetUserBalance = (
     refetchOnWindowFocus: true,
     refetchOnReconnect: true,
     refetchOnMount: true,
+    retry: false, // Don't retry on 404 - user may not have balance record
     ...config,
     enabled: (config?.enabled ?? true) === true && queriesEnabled,
   });

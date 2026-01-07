@@ -17,16 +17,23 @@ const { getAppConfig } = require('./app');
  */
 async function getEndpointsConfig(req) {
   const cache = getLogStores(CacheKeys.CONFIG_STORE);
+  const appConfig = req.config ?? (await getAppConfig({ role: req.user?.role }));
   const cachedEndpointsConfig = await cache.get(CacheKeys.ENDPOINT_CONFIG);
   if (cachedEndpointsConfig) {
+    // Invalidate cache if it has deprecated gptPlugins
     if (cachedEndpointsConfig.gptPlugins) {
+      await cache.delete(CacheKeys.ENDPOINT_CONFIG);
+    }
+    // Invalidate cache if documentSupportedProviders is configured but not in cache
+    else if (
+      appConfig?.endpoints?.[EModelEndpoint.agents]?.documentSupportedProviders?.length > 0 &&
+      !cachedEndpointsConfig[EModelEndpoint.agents]?.documentSupportedProviders
+    ) {
       await cache.delete(CacheKeys.ENDPOINT_CONFIG);
     } else {
       return cachedEndpointsConfig;
     }
   }
-
-  const appConfig = req.config ?? (await getAppConfig({ role: req.user?.role }));
   const defaultEndpointsConfig = await loadDefaultEndpointsConfig(appConfig);
   const customEndpointsConfig = loadCustomEndpointsConfig(appConfig?.endpoints?.custom);
 
